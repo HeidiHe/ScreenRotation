@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         mSensorManager.unregisterListener(this);
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 this, mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD),SensorManager.SENSOR_DELAY_NORMAL);
 
     }
+
 
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -114,8 +116,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             roll = values[2] * 57.2957795f;
             mags = null;
             accels = null;
-
-
         }
         float degree = Math.round(yaw) + 180;
 
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public void degreeToStore(float degree){
 
-        DegreeTV.setText("Heading: " + Float.toString(degree) + " degrees");
+        DegreeTV.setText(getString(R.string.Degree_title) + Float.toString(degree) + getString(R.string.degrees));
 
         if (isBetween(degree, 1, 20)) {
             store = "mcDonald";
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
 
-    
+
     public static boolean isBetween( float x, int lower, int upper) {
             return lower <= x && x <= upper;
     }

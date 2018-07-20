@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ScreenRotation</string>
     <string name="welcome">欢迎来到商场</string>
-    <string name="heading_0_0">Heading: 0.0</string>
+    <string name="heading_0_0">Degree: 0.0</string>
     <string name="none">none</string>
+    <string name="Degree_title">Degree:</string>
+    <string name="degrees">degrees</string>
 </resources>
